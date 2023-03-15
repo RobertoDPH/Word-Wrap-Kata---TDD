@@ -2,9 +2,9 @@ package org.kata;
 
 public class Wrapper {
 
-    public static String wrap(String line, Integer columnNumber) throws Exception {
+    public static String wrap(String line, Integer columnWidth) throws Exception {
 
-        if(columnNumber < 1){
+        if(columnWidth < 1){
             throw new Exception("Column Number must be greater than 0");
         }
         
@@ -13,14 +13,14 @@ public class Wrapper {
         }
 
         String[] stringList = line.trim().split(" ");
-        if(stringList.length <= columnNumber){
+        if(stringList.length <= columnWidth){
             return line;
         }
         
         String response = "";
 
         for (int index = 0; index < stringList.length; index++) {
-            if(index > 0 && index % columnNumber == 0){
+            if(index > 0 && index % columnWidth == 0){
                 response += "\n ";
             }
 
