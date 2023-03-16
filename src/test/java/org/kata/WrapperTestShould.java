@@ -9,11 +9,10 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class WrapperTestShould {
     /*
      * Casos de uso:
-     *   1. columnNumber es menor o igual que 0 --done
-     *   2. line está vacío -- done
-     *   3. columnNumber must be an integer // Done
-     *   4. columnNumber es mayor que el numero de palabras devolver la misma line -- done
-     *   5. columnNumber y line son correcto, devuelve el resultado esperado
+     *   1. columnWidth es menor o igual que 0 --done
+     *   2. line está vacío o es null -- done
+     *   3. columnWidth es mayor que el numero de palabras devolver la misma line -- done
+     *   4. columnWidth y line son correcto, devuelve el resultado esperado
      */
 
     @Test

@@ -4,11 +4,9 @@ public class Wrapper {
 
     public static String wrap(String line, Integer columnWidth) throws Exception {
 
-        if(columnWidth < 1){
-            throw new Exception("Column Number must be greater than 0");
-        }
-        
-        if(line.isBlank()){
+        checkForColumnWidthBiggerThan0(columnWidth);
+
+        if(checkForEmptyOrNullString(line)){
             return "";
         }
 
@@ -27,5 +25,15 @@ public class Wrapper {
             response += stringList[index] + " ";
         }
         return response;
+    }
+
+    public static void checkForColumnWidthBiggerThan0(int columnWidth) throws Exception {
+        if(columnWidth < 1){
+            throw new Exception("Column Number must be greater than 0");
+        }
+    }
+
+    public static boolean checkForEmptyOrNullString(String line){
+        return line.isBlank() || line == null;
     }
 }
